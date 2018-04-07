@@ -1,0 +1,38 @@
+<hr>
+ <h1>Your advertisement preview below</h1>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-active table-bordered table-hover text-center">
+                <tr class="table-primary"><th>Property</th><th>Details</th></tr>
+                <tr><td>Street</td><td>{{ street }}</td></tr>
+                <tr><td>Number</td><td>{{ number }}</td></tr>
+                <tr><td>City</td><td>{{ city }}</td></tr>
+                <tr><td>Floor</td><td>{{ floor }}</td></tr>
+                <tr><td>Description</td><td>{{ description }}</td></tr>
+                <tr><td>Furniture</td><td>{{ furniture }}</td></tr>
+                <tr><td>Rooms</td><td>{{ rooms }}</td></tr>
+                <tr><td>Pets</td><td>{{ pets }}</td></tr>
+                <tr><td>First Name</td><td>{{ firstname }}</td></tr>
+                <tr><td>Last Name</td><td>{{ lastname }}</td></tr>
+                <tr><td>Phone</td><td>{{ phone }}</td></tr>
+                <tr><td>Email</td><td>{{ email }}</td></tr>
+                <tr><td>Accept</td><td>{{ accept }}</td></tr>
+            </table>
+
+            <!--<form #rentForm="ngForm">
+                <input type="text" name="street" [(ngModel)]="street">
+                <input type="text" name="number" [(ngModel)]="number">
+                <input type="text" name="city" [(ngModel)]="city">
+                <input type="text" name="floor" [(ngModel)]="floor">
+            </form>-->
+
+            <div class="form-group row">
+                <div class="form-control">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button class="btn btn-info fa fa-arrow-left" (click)="previousPage()">Previous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

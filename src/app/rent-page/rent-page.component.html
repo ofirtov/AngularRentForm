@@ -1,0 +1,75 @@
+<div class="form-group row">
+    <div class="col-xs-12">
+        <div class="jumbotron">
+            <form #rentForm="ngForm" (ngSubmit)="onSubmit()">
+                <fieldset class="form-group">
+                    <legend>Please fill up your rent post details</legend>
+                    <div class="form-group row">
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="street">רחוב</label>
+                                <input type="text" class="form-control" id="street" name="street" placeholder="{{ street }}" [(ngModel)]="street"  #street1="ngModel" required>
+                                <div *ngIf="street1.invalid && (street1.dirty || street1.touched)" class="alert alert-danger">
+                                    <div *ngIf="street1.errors?.required">
+                                        Street is required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="number">מספר בית</label>
+                                <input type="number" class="form-control" id="number" name="number" placeholder="מספר" [(ngModel)]="number" value="{{number}}" #number1="ngModel" min="1" required>
+                                <div *ngIf="number1.invalid && (number1.dirty || number1.touched)" class="alert alert-danger">
+                                    <div *ngIf="number1.errors?.required">
+                                        House number is required
+                                    </div>
+                                    <div *ngIf="number1.errors?.min">
+                                        Must be more then zero
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="city">עיר</label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="עיר" [(ngModel)]="city" value="{{city}}" #city1="ngModel" required>
+                                <div *ngIf="city1.invalid && (city1.dirty || city1.touched)" class="alert alert-danger">
+                                    <div *ngIf="city1.errors?.required">
+                                        City is required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="floor">קומה</label>
+                                <input type="number" class="form-control" id="floor" name="floor" placeholder="קומה" [(ngModel)]="floor" value="{{floor}}" #myFloor="ngModel" #floor1="ngModel" required>
+                                <div *ngIf="floor1.invalid && (floor1.dirty || floor1.touched)" class="alert alert-danger">
+                                    <div *ngIf="floor1.errors?.required">
+                                        Floor is required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-control">
+                            <button class="btn btn-primary" aria-hidden="true" (click)="pagePreview()">Preview</button>
+                            <!--<button class="btn btn-info fa fa-arrow-right" aria-hidden="true" (click)="nextPage($event)" *ngIf="isSaved">Next</button>
+                             <button class="btn btn-success" type="submit" [disabled]="!rentForm.valid">Submit</button>-->
+                            <button class="btn btn-info fa fa-arrow-right" aria-hidden="true" (click)="nextPage($event)" [disabled]="rentForm.invalid">Next</button>
+                            <button class="btn btn-success" (click)="saveDetails($event)">Save</button>
+                            <button class="btn btn-danger" type="reset">Reset</button>
+                            <button class="btn btn-info fa fa-arrow-left">Previous</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-rent-page-preview></app-rent-page-preview>
+
+

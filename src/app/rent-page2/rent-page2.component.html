@@ -1,0 +1,84 @@
+<div class="form-group row">
+    <div class="col-xs-12">
+        <div class="jumbotron">
+            <form #rentForm="ngForm">
+                <fieldset class="form-group">
+                    <legend>Please fill up your rent post details</legend>
+                    <div class="form-group row">
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="firstname">שם פרטי</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="שם פרטי" [(ngModel)]="firstname" value="{{firstname}}" #first1="ngModel" required>
+                                <div *ngIf="first1.invalid && (first1.dirty || first1.touched)" class="alert alert-danger">
+                                    <div *ngIf="first1.errors?.required">
+                                        Name is required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="lastname">שם משפחה</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="שם משפחה" [(ngModel)]="lastname" value="{{lastname}}" #last1="ngModel" required>
+                                <div *ngIf="last1.invalid && (last1.dirty || last1.touched)" class="alert alert-danger">
+                                    <div *ngIf="last1.errors?.required">
+                                        Last Name is required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="email">מייל</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="מייל" [(ngModel)]="email" value="{{email}}"
+                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Enter a valid Email" #email1="ngModel" required>
+                            </div>
+                            <div class="alert alert-danger" *ngIf="email1.errors?.pattern">Email is not valid</div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="phone">טלפון</label>
+                                <input type="text" class="form-control" id="phone" pattern="05?[0-9]-?[0-9]{7}"
+                                       name="phone" placeholder="טלפון" [(ngModel)]="phone" value="{{phone}}" title="e.g. 05x-1234567 or 0x-1234567" #phone1="ngModel" required>
+                                <div *ngIf="phone1.invalid && (phone1.dirty || phone1.touched)" class="alert alert-danger">
+                                    <div *ngIf="phone1.errors?.required">
+                                        Phone is required
+                                    </div>
+                                    <div *ngIf="phone1.errors?.pattern">
+                                         e.g. 05x1234567 or 0x1234567
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-control">
+                                <label for="accept"> מאשר את <a href="#">תנאי השימוש</a></label>
+                                <input type="checkbox" class="form-control" id="accept" name="accept" placeholder="מאשר" [(ngModel)]="accept" value="{{accept}}" #accept1="ngModel" required>
+                                <div *ngIf="accept1.invalid && (accept1.dirty || accept1.touched)" class="alert alert-danger">
+                                    <div *ngIf="accept1.errors?.required">
+                                        You must accept the terms
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-control">
+                            <button class="btn btn-primary" aria-hidden="true" (click)="pagePreview()">Preview</button>
+                            <button class="btn btn-info fa fa-arrow-right" aria-hidden="true" (click)="nextPage()" [disabled]="rentForm.invalid">Next</button>
+                            <!-- <button class="btn btn-success" type="submit">Submit</button> -->
+                            <button class="btn btn-success" (click)="saveDetails()">Save</button>
+                            <button class="btn btn-danger" type="reset">Reset</button>
+                            <button class="btn btn-info fa fa-arrow-left" (click)="previousPage()">Previous</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<app-rent-page-preview></app-rent-page-preview>
+
+
