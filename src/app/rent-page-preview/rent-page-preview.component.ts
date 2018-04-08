@@ -36,24 +36,24 @@ export class RentPagePreviewComponent implements OnInit {
     public description: string;
     public furniture: string;
     public rooms: number;
-    public pets: boolean;
+    public pets: any;
     public firstname: string;
     public lastname: string;
     public email: string;
     public phone: any;
-    public accept: boolean;
+    public accept: any;
 
   constructor(private router: Router) {
   }
 
   ngOnInit() {
       this.street = localStorage.getItem('street');
-      this.number = localStorage.getItem('number');
+      this.number = +localStorage.getItem('number');
       this.city = localStorage.getItem('city');
       this.floor = localStorage.getItem('floor');
       this.description = localStorage.getItem('description');
       this.furniture = localStorage.getItem('furniture');
-      this.rooms = localStorage.getItem('rooms');
+      this.rooms = +localStorage.getItem('rooms');
       this.pets = localStorage.getItem('pets');
       this.firstname = localStorage.getItem('firstname');
       this.lastname = localStorage.getItem('lastname');

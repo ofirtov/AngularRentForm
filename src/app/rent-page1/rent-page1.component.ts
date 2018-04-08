@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./rent-page1.component.css']
 })
 export class RentPage1Component implements OnInit {
-    public description: any;
-    public furniture: any;
+    public description: string;
+    public furniture: string;
     public rooms: any;
-    public pets: boolean;
+    public pets: any;
 
   constructor(private router: Router) {
       this.description = '';

@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./rent-page2.component.css']
 })
 export class RentPage2Component implements OnInit {
-    public firstname: any;
-    public lastname: any;
-    public email: any;
+    public firstname: string;
+    public lastname: string;
+    public email: string;
     public phone: any;
-    public accept: boolean;
+    public accept: any;
 
   constructor(private router: Router) {
       this.firstname = '';

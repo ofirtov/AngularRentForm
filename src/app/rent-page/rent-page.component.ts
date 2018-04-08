@@ -13,9 +13,9 @@ export class RentPageComponent implements OnInit {
     // @Output() street = new EventEmitter<string>();
 
     public street: string;
-    public number: number;
+    public number: any;
     public city: string;
-    public floor: number;
+    public floor: any;
     public isSaved: boolean;
 
     constructor(private router: Router, private route: ActivatedRoute) {
