@@ -8,7 +8,7 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="description">תיאור הנכס</label>
-                                <input type="text" class="form-control" id="description" name="description" placeholder="תיאור הנכס" [(ngModel)]="description" value="{{description}}" #desc1="ngModel" required>
+                                <input type="text" class="form-control" id="description" name="description" placeholder="תיאור הנכס" [(ngModel)]="this.form2.description" value="{{this.form2.description}}" #desc1="ngModel" required>
                                 <div *ngIf="desc1.invalid && (desc1.dirty || desc1.touched)" class="alert alert-danger">
                                     <div *ngIf="desc1.errors?.required">
                                         Description is required
@@ -19,13 +19,13 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="furniture">ריהוט</label>
-                                <input type="text" class="form-control" id="furniture" name="furniture" placeholder="ריהוט" [(ngModel)]="furniture" value="{{furniture}}">
+                                <input type="text" class="form-control" id="furniture" name="furniture" placeholder="ריהוט" [(ngModel)]="this.form2.furniture" value="{{this.form2.furniture}}">
                             </div>
                         </div>
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="rooms">מספר חדרים</label>
-                                <input type="number" class="form-control" id="rooms" name="rooms" placeholder="מס' חדרים" [(ngModel)]="rooms" value="{{rooms}}" min="1" #rooms1="ngModel" required>
+                                <input type="number" class="form-control" id="rooms" name="rooms" placeholder="מס' חדרים" [(ngModel)]="this.form2.rooms" value="{{this.form2.rooms}}" min="1" #rooms1="ngModel" required>
                                 <div *ngIf="rooms1.invalid && (rooms1.dirty || rooms1.touched)" class="alert alert-danger">
                                     <div *ngIf="rooms1.errors?.required">
                                         Rooms number is required
@@ -39,7 +39,7 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="floor">חיות מחמד</label>
-                                <input type="checkbox" class="form-control" id="floor" name="pets" placeholder="חיות מחמד" [(ngModel)]="pets" value=`${{pets}}`>
+                                <input type="checkbox" class="form-control" id="floor" name="pets" placeholder="חיות מחמד" [(ngModel)]="this.form2.pets" value={{this.form2.pets}}>
                             </div>
                         </div>
                     </div>

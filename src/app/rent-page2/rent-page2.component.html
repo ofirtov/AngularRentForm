@@ -8,7 +8,7 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="firstname">שם פרטי</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="שם פרטי" [(ngModel)]="firstname" value="{{firstname}}" #first1="ngModel" required>
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="שם פרטי" [(ngModel)]="this.form3.firstname" value="{{this.form3.firstname}}" #first1="ngModel" required>
                                 <div *ngIf="first1.invalid && (first1.dirty || first1.touched)" class="alert alert-danger">
                                     <div *ngIf="first1.errors?.required">
                                         Name is required
@@ -19,7 +19,7 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="lastname">שם משפחה</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="שם משפחה" [(ngModel)]="lastname" value="{{lastname}}" #last1="ngModel" required>
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="שם משפחה" [(ngModel)]="this.form3.lastname" value="{{this.form3.lastname}}" #last1="ngModel" required>
                                 <div *ngIf="last1.invalid && (last1.dirty || last1.touched)" class="alert alert-danger">
                                     <div *ngIf="last1.errors?.required">
                                         Last Name is required
@@ -30,7 +30,7 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="email">מייל</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="מייל" [(ngModel)]="email" value="{{email}}"
+                                <input type="email" class="form-control" id="email" name="email" placeholder="מייל" [(ngModel)]="this.form3.email" value="{{this.form3.email}}"
                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Enter a valid Email" #email1="ngModel" required>
                             </div>
                             <div class="alert alert-danger" *ngIf="email1.errors?.pattern">Email is not valid</div>
@@ -39,7 +39,7 @@
                             <div class="form-control">
                                 <label for="phone">טלפון</label>
                                 <input type="text" class="form-control" id="phone" pattern="05?[0-9]-?[0-9]{7}"
-                                       name="phone" placeholder="טלפון" [(ngModel)]="phone" value="{{phone}}" title="e.g. 05x-1234567 or 0x-1234567" #phone1="ngModel" required>
+                                       name="phone" placeholder="טלפון" [(ngModel)]="this.form3.phone" value="{{this.form3.phone}}" title="e.g. 05x-1234567 or 0x-1234567" #phone1="ngModel" required>
                                 <div *ngIf="phone1.invalid && (phone1.dirty || phone1.touched)" class="alert alert-danger">
                                     <div *ngIf="phone1.errors?.required">
                                         Phone is required
@@ -53,7 +53,7 @@
                         <div class="col-xs-12">
                             <div class="form-control">
                                 <label for="accept"> מאשר את <a href="#">תנאי השימוש</a></label>
-                                <input type="checkbox" class="form-control" id="accept" name="accept" placeholder="מאשר" [(ngModel)]="accept" value="{{accept}}" #accept1="ngModel" required>
+                                <input type="checkbox" class="form-control" id="accept" name="accept" placeholder="מאשר" [(ngModel)]="this.form3.accept" value="{{this.form3.accept}}" #accept1="ngModel" required>
                                 <div *ngIf="accept1.invalid && (accept1.dirty || accept1.touched)" class="alert alert-danger">
                                     <div *ngIf="accept1.errors?.required">
                                         You must accept the terms

@@ -30,22 +30,22 @@ export class RentPage1Component implements OnInit {
     }
 
     nextPage() {
-        localStorage.setItem('description', this.description);
-        localStorage.setItem('furniture', this.furniture);
-        localStorage.setItem('rooms', this.rooms);
-        localStorage.setItem('pets', this.pets);
+        localStorage.setItem('description', this.form2.description);
+        localStorage.setItem('furniture', this.form2.furniture);
+        localStorage.setItem('rooms', this.form2.rooms);
+        localStorage.setItem('pets', this.form2.pets);
         this.router.navigate(['/rentPage2']);
     }
 
     saveDetails() {
-        localStorage.setItem('description', this.description);
-        localStorage.setItem('furniture', this.furniture);
-        localStorage.setItem('rooms', this.rooms);
-        localStorage.setItem('pets', this.pets);
-        console.log('description: ', this.description);
-        console.log('furniture: ', this.furniture);
-        console.log('rooms: ', this.rooms);
-        console.log('pets: ', this.pets);
+        localStorage.setItem('description', this.form2.description);
+        localStorage.setItem('furniture', this.form2.furniture);
+        localStorage.setItem('rooms', this.form2.rooms);
+        localStorage.setItem('pets', this.form2.pets);
+        console.log('description: ', this.form2.description);
+        console.log('furniture: ', this.form2.furniture);
+        console.log('rooms: ', this.form2.rooms);
+        console.log('pets: ', this.form2.pets);
     }
 
     previousPage() {

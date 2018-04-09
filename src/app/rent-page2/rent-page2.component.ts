@@ -34,25 +34,25 @@ export class RentPage2Component implements OnInit {
     }
 
     nextPage() {
-        localStorage.setItem('firstname', this.firstname);
-        localStorage.setItem('lastname', this.lastname);
-        localStorage.setItem('email', this.email);
-        localStorage.setItem('phone', this.phone);
-        localStorage.setItem('accept', this.accept);
+        localStorage.setItem('firstname', this.form3.firstname);
+        localStorage.setItem('lastname', this.form3.lastname);
+        localStorage.setItem('email', this.form3.email);
+        localStorage.setItem('phone', this.form3.phone);
+        localStorage.setItem('accept', this.form3.accept);
         this.router.navigate(['/rentPagePreview']);
     }
 
     saveDetails() {
-        localStorage.setItem('firstname', this.firstname);
-        localStorage.setItem('lastname', this.lastname);
-        localStorage.setItem('email', this.email);
-        localStorage.setItem('phone', this.phone);
-        localStorage.setItem('accept', this.accept);
-        console.log('firstname: ', this.firstname);
-        console.log('lastname: ', this.lastname);
-        console.log('email: ', this.email);
-        console.log('phone: ', this.phone);
-        console.log('accept: ', this.accept);
+        localStorage.setItem('firstname', this.form3.firstname);
+        localStorage.setItem('lastname', this.form3.lastname);
+        localStorage.setItem('email', this.form3.email);
+        localStorage.setItem('phone', this.form3.phone);
+        localStorage.setItem('accept', this.form3.accept);
+        console.log('firstname: ', this.form3.firstname);
+        console.log('lastname: ', this.form3.lastname);
+        console.log('email: ', this.form3.email);
+        console.log('phone: ', this.form3.phone);
+        console.log('accept: ', this.form3.accept);
     }
 
     previousPage() {

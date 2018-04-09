@@ -33,23 +33,23 @@ export class RentPageComponent implements OnInit {
     }
 
     nextPage() {
-        localStorage.setItem('street', this.street);
-        localStorage.setItem('number', this.number);
-        localStorage.setItem('city', this.city);
-        localStorage.setItem('floor', this.floor);
+        localStorage.setItem('street', this.form1.street);
+        localStorage.setItem('number', this.form1.number);
+        localStorage.setItem('city', this.form1.city);
+        localStorage.setItem('floor', this.form1.floor);
         this.router.navigate(['/rentPage1']);
     }
 
     saveDetails() {
-        localStorage.setItem('street', this.street);
-        localStorage.setItem('number', this.number);
-        localStorage.setItem('city', this.city);
-        localStorage.setItem('floor', this.floor);
+        localStorage.setItem('street', this.form1.street);
+        localStorage.setItem('number', this.form1.number);
+        localStorage.setItem('city', this.form1.city);
+        localStorage.setItem('floor', this.form1.floor);
         // For debugging
-        console.log('Street: ', this.street);
-        console.log('number: ', this.number);
-        console.log('city: ', this.city);
-        console.log('floor: ', this.floor);
+        console.log('Street: ', this.form1.street);
+        console.log('number: ', this.form1.number);
+        console.log('city: ', this.form1.city);
+        console.log('floor: ', this.form1.floor);
         this.isSaved = true;
     }
 
