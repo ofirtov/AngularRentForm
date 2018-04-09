@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
+import { RentDataService } from './rent-data.service';
 
 import { AppComponent } from './app.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
@@ -26,7 +27,7 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [RentDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

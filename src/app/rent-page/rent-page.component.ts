@@ -1,92 +1,62 @@
-import {Component, EventEmitter, OnInit, Output, OnDestroy, Input} from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-// import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { RentDataService} from '../rent-data.service';
 
 @Component({
     selector: 'app-rent-page',
     templateUrl: './rent-page.component.html',
     styleUrls: ['./rent-page.component.css'],
-
 })
-export class RentPageComponent implements OnInit {
-    // @Input() street;
-    // @Output() street = new EventEmitter<string>();
 
+export class RentPageComponent implements OnInit {
+    form1: any = [];
     public street: string;
     public number: any;
     public city: string;
     public floor: any;
     public isSaved: boolean;
 
-    constructor(private router: Router, private route: ActivatedRoute) {
+    constructor(private router: Router, private rentServe: RentDataService) {
         this.street = '';
         this.number = null;
         this.city = '';
         this.floor = null;
         this.isSaved = false;
+        this.form1 = rentServe.getData();
     }
 
     ngOnInit() {
-        localStorage.getItem('street');
-        localStorage.getItem('number');
-        localStorage.getItem('city');
-        localStorage.getItem('floor');
-        /*
-              this.street = this.route.params.subscribe(params => {
-                  this.street = params['street'];
-                  // In a real app: dispatch action to load the details here.
-              });
-
-              this.number = this.route.params.subscribe(params => {
-                  this.number = +params['street']; // (+) converts string 'id' to a number
-              });
-
-
-              this.floor = this.route.params.subscribe(params => {
-                  this.floor = +params['floor']; // (+) converts string 'id' to a number
-                  // In a real app: dispatch action to load the details here.
-              });
-        */
+        this.street = this.form1.street;
+        this.number = this.form1.number;
+        this.city = this.form1.city;
+        this.floor = this.form1.floor;
     }
 
-    nextPage($event) {
+    nextPage() {
+        localStorage.setItem('street', this.street);
+        localStorage.setItem('number', this.number);
+        localStorage.setItem('city', this.city);
+        localStorage.setItem('floor', this.floor);
         this.router.navigate(['/rentPage1']);
     }
 
-    saveDetails($event) {
-
-        localStorage.setItem('street', this.street),
-        localStorage.setItem('number', this.number),
-        localStorage.setItem('city', this.city),
+    saveDetails() {
+        localStorage.setItem('street', this.street);
+        localStorage.setItem('number', this.number);
+        localStorage.setItem('city', this.city);
         localStorage.setItem('floor', this.floor);
-        /*
-        $event.target.street = this.street;
-        $event.target.number = this.number;
-        $event.target.city = this.city;
-        $event.target.floor = this.floor;
-        */
         // For debugging
         console.log('Street: ', this.street);
         console.log('number: ', this.number);
         console.log('city: ', this.city);
         console.log('floor: ', this.floor);
         this.isSaved = true;
-
     }
 
     pagePreview() {
         this.router.navigate(['/rentPagePreview']);
-
     }
 
     onSubmit() {
-
     }
-    /*
-        ngOnDestroy() {
-            this.street.unsubscribe();
-            this.number.unsubscribe();
-            this.floor.unsubscribe();
-        }
-    */
 }

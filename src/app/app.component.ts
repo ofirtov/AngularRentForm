@@ -10,5 +10,5 @@ import {RentPagePreviewComponent} from './rent-page-preview/rent-page-preview.co
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Rent Form';
 }

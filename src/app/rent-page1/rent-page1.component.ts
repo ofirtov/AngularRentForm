@@ -1,29 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {RentDataService} from '../rent-data.service';
 
 @Component({
-  selector: 'app-rent-page1',
-  templateUrl: './rent-page1.component.html',
-  styleUrls: ['./rent-page1.component.css']
+    selector: 'app-rent-page1',
+    templateUrl: './rent-page1.component.html',
+    styleUrls: ['./rent-page1.component.css']
 })
 export class RentPage1Component implements OnInit {
+    form2: any = [];
     public description: string;
     public furniture: string;
     public rooms: any;
     public pets: any;
 
-  constructor(private router: Router) {
-      this.description = '';
-      this.furniture = '';
-      this.rooms = null;
-      this.pets = false;
-  }
+    constructor(private router: Router, private rentServe: RentDataService) {
+        this.description = '';
+        this.furniture = '';
+        this.rooms = null;
+        this.pets = false;
+        this.form2 = rentServe.getData();
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.description = this.form2.description;
+        this.furniture = this.form2.furniture;
+        this.rooms = this.form2.rooms;
+        this.pets = this.form2.pets;
+    }
 
     nextPage() {
-      this.router.navigate(['/rentPage2']);
+        localStorage.setItem('description', this.description);
+        localStorage.setItem('furniture', this.furniture);
+        localStorage.setItem('rooms', this.rooms);
+        localStorage.setItem('pets', this.pets);
+        this.router.navigate(['/rentPage2']);
     }
 
     saveDetails() {
