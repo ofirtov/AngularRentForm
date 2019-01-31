@@ -1,5 +1,6 @@
 # AngularRentForm
 
+An interactive multistage form with a dynamic preview using the browser's local storage.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
